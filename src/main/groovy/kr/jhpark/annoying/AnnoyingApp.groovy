@@ -11,8 +11,8 @@ import javafx.stage.Stage
 class AnnoyingApp extends Application {
     @Override
     void start(Stage stage) {
-        def fxmlLoader = new FXMLLoader(AnnoyingApp.class.getResource("hello-view.fxml"))
-        def scene = new Scene(fxmlLoader.load() as Parent, 320, 240)
+        def fxmlLoader = new FXMLLoader(AnnoyingApp.class.getResource("main.fxml"))
+        def scene = new Scene(fxmlLoader.load() as Parent)
         stage.setTitle("Hello!")
         stage.setScene(scene)
         stage.show()
