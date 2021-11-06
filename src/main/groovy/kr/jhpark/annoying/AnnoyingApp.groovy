@@ -8,10 +8,10 @@ import javafx.scene.Scene
 import javafx.stage.Stage
 
 @CompileStatic
-class HelloApplication extends Application {
+class AnnoyingApp extends Application {
     @Override
     void start(Stage stage) {
-        def fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"))
+        def fxmlLoader = new FXMLLoader(AnnoyingApp.class.getResource("hello-view.fxml"))
         def scene = new Scene(fxmlLoader.load() as Parent, 320, 240)
         stage.setTitle("Hello!")
         stage.setScene(scene)
@@ -19,6 +19,6 @@ class HelloApplication extends Application {
     }
 
     static void main(String[] args) {
-        launch(HelloApplication)
+        launch(AnnoyingApp)
     }
 }
