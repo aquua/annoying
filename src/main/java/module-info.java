@@ -6,4 +6,8 @@ module kr.jhpark.annoying {
 
     opens kr.jhpark.annoying to javafx.fxml;
     exports kr.jhpark.annoying;
+
+    opens kr.jhpark.annoying.controller to javafx.fxml;
+    exports kr.jhpark.annoying.controller;
+
 }

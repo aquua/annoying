@@ -1,4 +1,4 @@
-package kr.jhpark.annoying
+package kr.jhpark.annoying.controller
 
 import javafx.fxml.FXML
 import javafx.scene.control.Label
