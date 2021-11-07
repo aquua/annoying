@@ -40,6 +40,7 @@ public class MainController {
     private void loadPage(String xmlName){
         try{
 //            FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/kr/jhpark/annoying/Item.fxml")));
+            def uri = new File("../${xmlName}.fxml").toURI()
             def path = getClass().getResource("/kr/jhpark/annoying/${xmlName}.fxml")
             Parent root = FXMLLoader.load(path)
             layoutHome.setCenter(root)
