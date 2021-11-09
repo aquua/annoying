@@ -1,5 +1,6 @@
 package kr.jhpark.annoying.controller
 
+import groovy.transform.CompileStatic
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.scene.layout.BorderPane
@@ -7,7 +8,9 @@ import javafx.stage.DirectoryChooser
 import javafx.stage.FileChooser
 import javafx.stage.Stage
 
+@CompileStatic
 class SelectFolderController {
+
     @FXML
     private BorderPane folderMainPanes;
 
@@ -18,36 +21,27 @@ class SelectFolderController {
 
         DirectoryChooser fil_chooser = new DirectoryChooser();
         fil_chooser.setTitle("Select File");
-        File file = fil_chooser.showDialog(stage);
-
-        println(file.toString())
+        def file = fil_chooser.showDialog(stage) as File
+        def dirList = []
+        file.eachFileRecurse {
+            if (it.isDirectory()) {
+                dirList.add(it)
+            }
+        }
+        makeFileMap(dirList)
     }
 
-    private void sel(){
 
-//        // set title
-//
-//
-//        // set initial File
-//        fil_chooser.setInitialDirectory(new File("e:\\"));
-//
-//        EventHandler<ActionEvent> event =
-//                new EventHandler<ActionEvent>() {
-//
-//                    public void handle(ActionEvent e)
-//                    {
-//
-//                        // get the file selected
-//                        File file = fil_chooser.showOpenDialog(stage);
-//
-//                        if (file != null) {
-//                            label.setText(file.getAbsolutePath()
-//                                    + "  selected");
-//                        }
-//                    }
-//                };
-//
-//        button.setOnAction(event);
+    private void makeFileMap(List<File> dirList) {
+        Map<File, List<File>> dataViewFileList = [:]
+        dirList.each {
+            File dir = it
+            def list = dataViewFileList.get(dir, [])
+            dir.eachFileRecurse {
+                list.add(it)
+            }
+        }
+        println dataViewFileList
     }
 
 }

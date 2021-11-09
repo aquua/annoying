@@ -25,7 +25,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'kr.jhpark.annoying'
-    mainClass = 'kr.jhpark.annoying.HelloApplication'
+    mainClass = 'kr.jhpark.annoying.AnnoyingApp'
 }
 
 javafx {
