@@ -19,3 +19,4 @@
 3. java sdk 16 ( amazon corretto )
 4. groovy 3.0.9
 5. scene builder 16
+6. 아이콘 : icon8 Pichon
